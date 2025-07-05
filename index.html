@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vigneswar | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Basic body styling */
+    body {
+      background: linear-gradient(135deg, #2a3d68, #6a4c93);
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar Styling */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1.2rem 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    nav a {
+      color: #f3f3f3;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #6a4c93;
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 3rem;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .hero h1 {
+      font-weight: 600;
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+      animation: slideIn 1s ease-out forwards;
+    }
+
+    .hero h2 {
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: #ddd;
+      margin-bottom: 2rem;
+      animation: slideIn 1.5s ease-out forwards;
+    }
+
+    .hero p {
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      font-size: 1.2rem;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    .btn {
+      padding: 0.75rem 2.2rem;
+      border-radius: 50px;
+      border: 2px solid #fff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      transform: scale(1);
+      animation: bounceIn 1.5s ease-out forwards;
+    }
+
+    .btn:hover {
+      background-color: #fff;
+      color: #6a4c93;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    /* About, Projects, Contact Sections */
+    .section {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      margin-bottom: 3rem;
+      transform: translateY(50px);
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .section h2 {
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      color: #f3f3f3;
+    }
+
+    .project-grid {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .project-card {
+      background: #2c2c2c;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 10px 32px 0 rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-15px);
+    }
+
+    .project-card h3 {
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card p {
+      color: #ddd;
+      font-size: 1rem;
+    }
+
+    /* Contact Form */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2.5rem;
+      border-radius: 10px;
+    }
+
+    input, textarea {
+      padding: 1.2rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    button {
+      padding: 1.2rem;
+      background: #6a4c93;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #2a3d68;
+    }
+
+    /* Scroll Animation */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0); }
+      60% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .project-grid {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <h1>Vigneswar</h1>
+    <h2>B.Tech Student at Sahrdaya Engineering College</h2>
+    <p>Passionate about technology, coding, and creative problem-solving. Currently pursuing my B.Tech degree, working on projects that challenge and inspire me to grow as a developer.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a passionate coder and problem solver, currently pursuing my B.Tech degree in Computer Science. My interests lie in web development, app development, and machine learning. I enjoy working on challenging problems and creating solutions that can have a meaningful impact on the world.</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A web application built with HTML, CSS, and JavaScript that solves a complex problem related to time management and productivity.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>An e-commerce platform using React and Node.js for a seamless shopping experience. The platform allows users to buy and sell products.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>A mobile application designed for learning management using Flutter, where users can access courses and track progress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Vigneswar. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
